@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace OdeToFood.Controllers {
 
     [Route("[controller]")]
-    public class AboutController {
+    public class AboutController : Controller {
         
         [Route("")]
         public string Phone() {

@@ -1,4 +1,4 @@
-@model IEnumerable<OdeToFood.Models.Restaurant>
+@model OdeToFood.ViewModels.HomeIndexViewModel;
 
 <!DOCTYPE html>
 <html>
@@ -11,12 +11,16 @@
     <script src="main.js"></script>
 </head>
 <body>
+    <h1>@Model.CurrentMessage</h1>
     <table>
-        @foreach (var restaurant in Model)
+        @foreach (var restaurant in Model.Restaurants)
         {
             <tr>
                 <td>@restaurant.ID</td>
                 <td>@restaurant.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@restaurant.ID">Details</a>
+                </td>
             </tr>
         }
     </table>

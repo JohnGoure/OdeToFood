@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using OdeToFood.Models;
 
 namespace OdeToFood.Services {
@@ -18,6 +19,11 @@ namespace OdeToFood.Services {
         public IEnumerable<Restaurant> GetAll()
         {
             return this._restaurants;
+        }
+
+        public Restaurant Get(int id)
+        {
+            return _restaurants.FirstOrDefault(r => r.ID == id);
         }
 
         private List<Restaurant> _restaurants;
